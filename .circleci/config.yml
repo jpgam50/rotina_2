@@ -72,5 +72,5 @@ workflows:
               only:
                 - tag_1
             branches:
-              only:        #pode colocar 'ignore'  para iginorar um branch
+              ignore:        #pode colocar 'ignore'  para iginorar um branch
                 - master
