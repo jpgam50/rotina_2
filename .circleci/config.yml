@@ -62,17 +62,33 @@ jobs:
 
 
 #define o filtro
-filters: &anchor_filtro_desenv  #define uma ancora associada a um conteudo
-  tags:
-    only:
-      - /^tag.*/
-  branches:
-    ignore:        #pode colocar 'ignore'  para iginorar um branch
-      - /.*/
+#filters: &anchor_filtro_desenv  #define uma ancora associada a um conteudo
+#  tags:
+#    only:
+#      - /^tag.*/
+#  branches:
+#    ignore:        #pode colocar 'ignore'  para iginorar um branch
+#      - /.*/
+
+#OBS: geralmente o seçãp de filtro é colocada dentro de cada trabalhos. Mas
+#possível usar ancoras para melhorar o arquivo de configuração. Neste caso eu
+#coloquei os filtros ancorados no lado de fora do workflow e funcionou corretamente
+
+
 
 #define os fluxos de trabalho
 workflows:
   version: 2
+
+  #define o filtro
+  filters: &anchor_filtro_desenv  #define uma ancora associada a um conteudo
+    tags:
+      only:
+        - /^tagT.*/
+    branches:
+      ignore:        #pode colocar 'ignore'  para iginorar um branch
+        - /.*/
+
   #build-test-and-deploy:
   rotina 1 roda o código:
     jobs:
