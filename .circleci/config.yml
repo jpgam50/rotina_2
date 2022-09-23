@@ -70,7 +70,7 @@ workflows:
           filters:
             tags:
               only:
-                - /^t.*/
+                - tag_1
             branches:
               only:        #pode colocar 'ignore'  para iginorar um branch
                 - master
